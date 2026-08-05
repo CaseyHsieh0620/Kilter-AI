@@ -2,6 +2,7 @@ climbs.db
 climbs.pkl
 KilterClimbsGenerationData.pkl
 KilterMap.pkl
-checkpoints/
+checkpoints/*
+!checkpoints/GenAI_epoch:24
 __pycache__/
 *.pyc
