@@ -1,0 +1,7 @@
+climbs.db
+climbs.pkl
+KilterClimbsGenerationData.pkl
+KilterMap.pkl
+checkpoints/
+__pycache__/
+*.pyc
