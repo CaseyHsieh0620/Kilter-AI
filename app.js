@@ -157,7 +157,7 @@ function drawClimb(holds) {
       x = "magenta";
     }
     if (holds[i][2] == "middle") {
-      x = "blue";
+      x = "cyan";
     }
     ctx.beginPath();
     ctx.arc(centerX, centerY, 12, 0, 2 * Math.PI);
