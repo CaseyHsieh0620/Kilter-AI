@@ -113,22 +113,40 @@ async function onGenerate() {
   for (let attempt = 0; attempt < 1000; attempt++) {
     const candidate = await generateOneAttempt(angle, grade, nomatch);
 
-    let green = 0;
-    let purple = 0;
+
     let foot = 0;
+    let greenDistance = [];
+    let purpleDistance = [];
     for (const hold of candidate) {
       if (hold[2] === "start") {
-        green++;
+        greenDistance.push(hold[0]);
+        greenDistance.push(hold[1]);
       }
       if (hold[2] === "finish") {
-        purple++;
+        purpleDistance.push(hold[0]);
+        purpleDistance.push(hold[1]);
       }
       if (hold[2] === "foot") {
         foot++;
       }
     }
 
-    if (green > 0 && green <= 2 && purple > 0 && purple <= 2 && foot > 0) {
+    if (greenDistance.length > 0 && greenDistance.length <= 4 && purpleDistance.length > 0 && purpleDistance.length <= 4 && foot > 0) {
+      if (greenDistance.length == 4) {
+        let greenLengthy = greenDistance[3] - greenDistance[1];
+        let greenLengthx = greenDistance[2] - greenDistance[0];
+        if (Math.sqrt((greenLengthy * greenLengthy) + (greenLengthx * greenLengthx)) > 51) {
+          continue;
+        }
+      }
+      if (purpleDistance.length == 4) {
+        let purpleLengthy = purpleDistance[3] - purpleDistance[1];
+        let purpleLengthx = purpleDistance[2] - purpleDistance[0];
+        if (Math.sqrt((purpleLengthy * purpleLengthy) + (purpleLengthx * purpleLengthx)) > 51) {
+          continue;
+        }
+      }
+
       holdarr = candidate;
       break;
     }
