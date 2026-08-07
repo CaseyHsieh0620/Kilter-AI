@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>body {background:black; color:white;}</style>
+    <style>
+        body {background:black; color:white;}
+        .layout { display: flex; align-items: flex-start; gap: 30px; }
+        .controls { flex: 0 0 auto; }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
@@ -12,34 +16,37 @@
 </head>
 <body>
     <h1>Kilter Board Generator</h1>
-    <p>Input your parameters and Generate a Climb</p>
-    
-    <label>Angle</label><br>
-    <input type="number" id = "angle" value = "40"> <br>
-    <br>
-    <label>No Match(1 = no match, 0 = match)</label> <br>
-    <input type="number" id = "Match" value = "0"> <br>
-    <br>
-    <label>Grade(V0 - V13: 13< rounded to 13)</label> <br>
-    <input type="number" id = "grade" value = "5"> <br>
-    <br>
-    
-    <button id ="generate">Generate Climb</button> <br>
-    <br>
-    <br>
-        
-    <button id ="export">Export to Kilter App (WIP)</button> <br>
-    <input type="text" id = "Username" value = ""> <br>
-    <br>
-        
-    <label>Input what grade you think it is</label> <br>
-    <input type="number" id = "userGrade" value = "5"> <br>
-    <button id ="userGradeBTN">Grade</button> <br>
 
-        
-    <canvas id ="board" width = "950" height = "950"></canvas>
-    
+    <div class="layout">
+        <div class="controls">
+            <p>Input your parameters and Generate a Climb</p>
 
-    
+            <label>Angle</label><br>
+            <input type="number" id = "angle" value = "40"> <br>
+            <br>
+            <label>No Match(1 = no match, 0 = match)</label> <br>
+            <input type="number" id = "Match" value = "0"> <br>
+            <br>
+            <label>Grade(V0 - V13: 13< rounded to 13)</label> <br>
+            <input type="number" id = "grade" value = "5"> <br>
+            <br>
+
+            <button id ="generate">Generate Climb</button> <br>
+            <br>
+            <br>
+
+            <button id ="export">Export to Kilter App (WIP)</button> <br>
+            <input type="text" id = "Username" value = ""> <br>
+            <br>
+
+            <label>Input what grade you think it is</label> <br>
+            <input type="number" id = "userGrade" value = "5"> <br>
+            <button id ="userGradeBTN">Grade</button> <br>
+        </div>
+
+        <canvas id ="board" width = "950" height = "950"></canvas>
+    </div>
+
+
 </body>
 </html>
