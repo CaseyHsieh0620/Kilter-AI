@@ -107,7 +107,7 @@ async function generateOneAttempt(angle, grade, nomatch) {
 async function onGenerate() {
   const angle = parseInt(document.getElementById("angle").value);
   const grade = parseInt(document.getElementById("grade").value);
-  const nomatch = parseInt(document.getElementById("Match").value);
+  const nomatch = parseInt(document.getElementById("Match").checked ? 1 : 0);
 
   let holdarr = [];
   for (let attempt = 0; attempt < 1000; attempt++) {
