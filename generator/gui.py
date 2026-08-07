@@ -123,12 +123,15 @@ class KilterGUI:
             tempHolds = self.parseClimb()
             green = 0
             purple = 0
+            foot = 0
             for hold in tempHolds:
                 if hold[2] == 'start':
                     green = green + 1
                 if hold[2] == 'finish':
                     purple = purple + 1
-            if purple <= 2 and purple > 0 and green <= 2 and green > 0:
+                if hold[2] == 'foot':
+                    foot = foot + 1
+            if purple <= 2 and purple > 0 and green <= 2 and green > 0 and foot > 0:
                 holds = tempHolds
                 break
 

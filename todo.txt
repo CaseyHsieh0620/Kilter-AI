@@ -1,0 +1,6 @@
+Finish the website gui,
+write a script to import with the boardlib api
+crowd sourced data
+integrate grade checker into the gui to give a rough estimate/ reject anythign too hard or too easy (+- a grade of real)
+sanity checks on the ai  for more accurate grading
+Reach Goal: plug an llm into that make a translater and be able to describe a type of climb you want and it'll generate it for you

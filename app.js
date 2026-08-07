@@ -42,6 +42,9 @@ function buildCausalMask(len) { // define what we can talk to/ what we can see w
 
 async function generateClimb(angle, grade, nomatch) {
   angle = angle - (angle % 5);
+  if (grade > 13) {
+    grade = 13;
+  }
   grade = nameToGrade["V" + grade];
   let token = [(angle / 5) + 1511, grade + 70 / 5 + 1511, nomatch + 70 / 5 + 1511 + 39];
 
